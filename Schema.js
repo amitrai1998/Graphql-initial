@@ -36,32 +36,6 @@ var AuthorType = new GraphQLObjectType({
   })
 });
 
-// const BookType = new GraphQLObjectType({
-//   name: "book",
-//   fields: () => ({
-//     id: { type: GraphQLString },
-//     name: { type: GraphQLString },
-//     genre: { type: GraphQLInt }
-//   })
-// });
-
-// const RootQuery = new GraphQLObjectType({
-//   name: "RootQueryType",
-//   fields: {
-//     Book: {
-//       type: BookType,
-//       args: { id: { type: GraphQLString } },
-//       resolve(parens, args) {
-//         return _.find(book, { id: args.id });
-//       }
-//     }
-//   }
-// });
-
-// module.exports = new GraphQLObjectType({
-//   query: RootQuery
-// });
-
 const BookType = new GraphQLObjectType({
   name: "BookType",
   fields: () => ({
