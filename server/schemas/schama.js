@@ -6,8 +6,8 @@ var book = [
   { name: "Name of the Wind", id: "1", genera: "thriller",authorId:"2" },
   { name: "Name of the Wind 2", id: "2", genera: "thriller",authorId:"2" },
 
-  { name: "The Final Empire", id: "2", genera: "comidy" ,authorId:"1"},
-  { name: "The Witcher", id: "2", genera: "comidy", authorId:"1"}
+  { name: "The Final Empire", id: "3", genera: "comidy" ,authorId:"1"},
+  { name: "The Witcher", id: "4", genera: "comidy", authorId:"1"}
 ];
 
 var author = [
@@ -70,6 +70,18 @@ const RootQuery = new GraphQLObjectType({
         console.log(parent,args);
         return _.find(author,{id:args.id})
 
+      }
+    },
+    books:{
+      type:new GraphQLList(BookType),
+      resolve(parent,args){
+        return book
+      }
+    },
+    author:{
+      type:new GraphQLList(AuthorType),
+      resolve(parent,args){
+        return author
       }
     }
   }
