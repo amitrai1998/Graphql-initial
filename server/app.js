@@ -1,9 +1,10 @@
 const express=require("express");
 const graphqlHTTP=require("express-graphql");
 const Schema=require("./schemas/schama.js")
+const cors=require("cors")
 const app=express();
 
-
+app.use(cors())
 const mongoose=require("mongoose")
 
 mongoose.connect("mongodb://localhost:27017/graphql");
